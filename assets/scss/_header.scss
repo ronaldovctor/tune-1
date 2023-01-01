@@ -1,0 +1,139 @@
+.header {
+	position: fixed;
+	left: 0;
+	right: 0;
+	width: calc(100% - em(80));
+	z-index: 1000;
+	max-width: $l-device;
+	margin: 0 auto;
+	.header-nav {
+		display: flex;
+		align-items: flex-start;
+		position: relative;
+		margin-top: em(20);
+		@include d(700) {
+			justify-content: flex-end;
+			img {
+				width: em(200);
+				top: 50%;
+				transform: translate3d(0, -50%, 0) !important;
+				left: em(0) !important;
+			}
+		}
+		@include d(500) {
+			margin-top: em(12);
+		}
+		.header-nav-items {
+			display: grid;
+			gap: em(12);
+			margin-left: em(10);
+			@include text-1-sm-2();
+			a {
+				color: $c-0;
+				position: relative;
+				&::before {
+					content: '';
+					position: absolute;
+					width: em(3);
+					height: em(25);
+					background-color: $c-4;
+					transform: translate3d(em(-12), 0, 0);
+					margin-right: em(12);
+					z-index: -1;
+					transition: 0.25s;
+				}
+				&:hover {
+					color: $c-0;
+					&::before {
+						width: 140%;
+					}
+				}
+			}
+			li {
+				&:first-child a:hover {
+					color: $c-12;
+				}
+				&:nth-child(n + 2) a::before {
+					background-color: $c-3;
+				}
+			}
+		}
+		img {
+			position: absolute;
+			left: 50%;
+			transform: translate3d(-50%, 0, 0);
+			transition: 0.25s;
+		}
+	}
+	&.sticky {
+		background-color: $c-12;
+		width: 100%;
+		.header-nav {
+			margin-inline: em(40);
+			height: em(50);
+			justify-content: space-between !important;
+
+			@include d(1100) {
+				img {
+					width: em(180) !important;
+					position: static;
+					order: -1;
+					transition: 0s;
+					transform: none !important;
+				}
+				.header-nav-items {
+					gap: em(4) !important;
+				}
+			}
+			@include d(600) {
+				img {
+					width: em(150) !important;
+				}
+				.header-nav-items {
+					margin-top: em(4);
+					font-size: em(16);
+				}
+			}
+			@include d(500) {
+				height: em(40);
+				img {
+					width: em(100) !important;
+					margin-top: em(6);
+				}
+			}
+			.header-nav-items {
+				display: flex;
+				gap: em(12);
+				a {
+					color: $c-2;
+					padding: em(4) em(8);
+					transition: 0.25s;
+					&::before {
+						content: none;
+					}
+					&::after {
+						content: '';
+						position: absolute;
+						width: 100%;
+						height: 0%;
+						left: 0;
+						top: 0;
+						background-color: $c-0;
+						transition: 0.25s;
+						z-index: -1;
+					}
+					&:hover {
+						color: $c-12 !important;
+						&::after {
+							height: 100%;
+						}
+					}
+				}
+			}
+			img {
+				width: em(200);
+				top: -2px;
+			}
+		}
+	}
+}

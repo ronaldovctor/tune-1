@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"sourceMap": true,
+		"allowJs": true,
+		"removeComments": true,
+		"strict": true,
+		"noImplicitAny": true,
+		"alwaysStrict": true,
+		"strictNullChecks": true,
+		"noImplicitThis": true,
+		"noImplicitReturns": true,
+		"outDir": "js",
+		"isolatedModules": false,
+		"declaration": false,
+		"noUnusedLocals": false,
+		"noUnusedParameters": false
+	},
+	"include": ["**/*.ts"]
+}

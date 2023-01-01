@@ -1,0 +1,123 @@
+.events {
+	max-width: $l-device;
+	margin: 0 auto;
+	margin-top: em(120);
+	.events-container {
+		display: grid;
+		grid-template-columns: 1fr minmax(400px, 1400px) 1fr;
+		@include bottomDetail('ntos', 2);
+	}
+	.events-content {
+		display: grid;
+		grid-template-columns: 2fr auto;
+		grid-template-rows: em(520) auto;
+		grid-column: 2 / -1;
+		@include topDetail('Eve');
+		&::before {
+			left: 0;
+		}
+		.events-desc {
+			align-self: flex-end;
+			background-color: $c-11;
+			padding: em(32) em(80) em(32) em(20);
+			p {
+				@include text-1-sm-2();
+				color: $c-1;
+				margin-top: em(24);
+				&:last-child {
+					margin-top: em(20);
+				}
+				@include d(900) {
+					font-size: em(16);
+				}
+			}
+		}
+		img {
+			display: flex;
+			height: 100%;
+			object-fit: cover;
+			object-position: 0 80%;
+			grid-column: 2 / -1;
+		}
+		@include d(1450) {
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: em(420) auto;
+			.events-desc {
+				height: 100%;
+				padding: em(32) em(32) em(32) em(20);
+			}
+			img {
+				object-position: 50%;
+			}
+		}
+		@include d(640) {
+			grid-template-columns: 1fr;
+			grid-template-rows: 150px auto;
+			.events-desc {
+				p {
+					margin-top: em(16);
+				}
+			}
+			img {
+				grid-column: 1 / -1;
+				object-position: 0 80%;
+				order: -1;
+			}
+		}
+	}
+	.events-partners {
+		display: flex;
+		gap: em(80);
+		grid-column: 2 / -1;
+		background-color: $c-0;
+		padding: em(12) em(40) em(12) em(20);
+		h3 {
+			color: $c-12;
+			font: normal em(32) 'Josefin Sans', sans-serif;
+			align-self: center;
+		}
+		ul {
+			display: flex;
+			align-items: center;
+			gap: em(40);
+			li {
+				max-width: em(120);
+				max-height: em(60);
+				img {
+					object-fit: cover;
+					width: 100%;
+					max-height: 100%;
+				}
+			}
+		}
+		@include d(1450) {
+			justify-content: space-between;
+		}
+		@include d(900) {
+			padding: em(12) em(20);
+			gap: em(40);
+			h3 {
+				font-size: em(26);
+			}
+		}
+		@include d(640) {
+			flex-wrap: wrap;
+			gap: em(4);
+			h3 {
+				width: 100%;
+				text-align: center;
+			}
+			ul {
+				gap: em(4);
+				justify-content: space-between;
+				width: 100%;
+				li {
+					width: em(60);
+				}
+			}
+		}
+	}
+	@include d(900) {
+		margin-top: em(80);
+	}
+}

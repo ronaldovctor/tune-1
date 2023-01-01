@@ -1,0 +1,136 @@
+// Colors
+$c-0: #fff;
+$c-1: #e9e9e9;
+$c-2: #cfcfcf;
+$c-3: #d03824;
+$c-4: #5deceb;
+$c-10: #3e3e3e;
+$c-11: #161616;
+$c-12: #000;
+
+// Fonts
+
+$font-1: 'Josefin Sans', sans-serif;
+$font-2: 'Roboto', sans-serif;
+$font-3: 'Zen Dots', cursive;
+
+@mixin text-1-sm() {
+	font: bold em(16) / em(20) $font-2;
+}
+@mixin text-1-sm-2() {
+	font: normal em(18) / em(25) $font-2;
+}
+@mixin text-1-md() {
+	font: 600 em(20) / em(24) $font-2;
+}
+@mixin text-1-md-2() {
+	font: 500 em(22) / em(28) $font-2;
+}
+@mixin text-1-lg() {
+	font: 500 em(24) / em(30) $font-2;
+}
+@mixin text-1-xl() {
+	font: bold em(32) $font-2;
+}
+
+@mixin text-2-sm() {
+	font: bold em(24) / em(28) $font-1;
+}
+@mixin text-2-md() {
+	font: bold em(40) $font-1;
+}
+@mixin text-2-lg() {
+	font: bold em(48) $font-1;
+}
+@mixin text-2-xl() {
+	font: bold em(96) $font-1;
+}
+
+@mixin text-3-xl() {
+	font: normal em(96) / 80px $font-3;
+}
+
+@mixin font-smooth() {
+	font-smooth: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// Sizes
+
+$l-device: 1920px;
+$l-device-2: 1400px;
+
+@function em($pixel, $context: 16) {
+	$result: ($pixel / $context) + em;
+	@return $result;
+}
+
+@mixin d($size) {
+	@if $size == 1 {
+		@media (max-width: $l-device) {
+			@content;
+		}
+	} @else {
+		@media (max-width: #{$size}px) {
+			@content;
+		}
+	}
+}
+
+// Variables
+
+@mixin inset-shadow-l($xPos: 80, $size: 100) {
+	box-shadow: inset #{$xPos}px 0 #{$size}px $c-12;
+}
+@mixin inset-shadow-r($xPos: 80, $size: 100) {
+	box-shadow: inset -#{$xPos}px 0 #{$size}px $c-12;
+}
+@mixin inset-shadow-both($xPos: 80, $size: 100) {
+	box-shadow: inset #{$xPos}px 0 #{$size}px $c-12, inset -#{$size}px 0 #{$size}px $c-12;
+}
+
+// Detail
+
+@mixin topDetail($text, $type: 1) {
+	position: relative;
+	&::before {
+		position: absolute;
+		@include text-3-xl();
+		top: 0;
+		left: 40px;
+		content: '#{$text}';
+		@if $type == 1 {
+			color: rgb(255, 255, 255, 0.06);
+			-webkit-text-stroke: 2px rgb(255, 255, 255, 0.08);
+		} @else {
+			color: rgb(0, 0, 0, 0.06);
+			-webkit-text-stroke: 2px rgb(0, 0, 0, 0.08);
+		}
+		@include d(1450) {
+			content: none;
+		}
+	}
+}
+
+@mixin bottomDetail($text, $type: 1) {
+	position: relative;
+	&::after {
+		position: absolute;
+		@include text-3-xl();
+		bottom: 0;
+		right: 40px;
+		content: '#{$text}';
+		height: fit-content;
+		@if $type == 1 {
+			color: rgb(255, 255, 255, 0.06);
+			-webkit-text-stroke: 2px rgb(255, 255, 255, 0.08);
+		} @else {
+			color: rgb(0, 0, 0, 0.06);
+			-webkit-text-stroke: 2px rgb(0, 0, 0, 0.08);
+		}
+		@include d(1450) {
+			content: none;
+		}
+	}
+}

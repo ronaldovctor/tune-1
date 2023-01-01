@@ -1,0 +1,201 @@
+.cars {
+	max-width: $l-device;
+	margin: 0 auto;
+	padding-top: em(120);
+	position: relative;
+	@include d(900) {
+		padding-top: em(80);
+	}
+	.cars-container {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto 1fr;
+		gap: em(20);
+		margin-inline: em(100);
+		@include topDetail('Car');
+		@include bottomDetail('ros');
+		&::before {
+			left: 0;
+		}
+		&::after {
+			right: 0;
+		}
+		@include d(1100) {
+			margin-inline: em(40);
+		}
+		@include d(850) {
+			margin-inline: em(20);
+		}
+		.car-title {
+			margin: 0 auto;
+		}
+		[data-slide='wrapper'] {
+			position: relative;
+			overflow: hidden;
+			height: em(720);
+			[data-slide='slide'] {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				transition: transform 0.4s;
+				li {
+					width: 100%;
+					height: em(720);
+					pointer-events: none;
+					@include inset-shadow-both();
+					position: relative;
+					img {
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						z-index: -1;
+					}
+				}
+			}
+			[data-slide='controls'] {
+				display: flex;
+				flex-direction: column;
+				gap: em(32);
+				position: absolute;
+				z-index: 100;
+				top: 50%;
+				transform: translate3d(0, -50%, 0);
+				right: em(20);
+				button[data-slide] {
+					border: none;
+					background-color: transparent;
+					& svg path {
+						stroke: $c-3;
+					}
+					& svg {
+						width: 100%;
+						height: 100%;
+					}
+					&:hover {
+						cursor: pointer;
+					}
+					&:first-of-type {
+						rotate: 180deg;
+					}
+					&.off {
+						opacity: 0.5;
+						cursor: default;
+						& svg path {
+							stroke: $c-0;
+						}
+					}
+				}
+			}
+			[data-slide='scroll'] {
+				position: absolute;
+				z-index: 100;
+				top: 50%;
+				transform: translate3d(0, -50%, 0);
+				width: em(5);
+				background-color: rgb(255, 255, 255, 0.15);
+				height: 60%;
+				[data-slide='scroll-thumb'] {
+					content: '';
+					position: absolute;
+					top: 0;
+					width: 100%;
+					height: 0%;
+					background-color: $c-4;
+					transition: 0.4s;
+				}
+			}
+			@include d(1400) {
+				height: em(520);
+				[data-slide='slide'] li {
+					height: em(520);
+					@include inset-shadow-both(60, 50);
+				}
+			}
+			@include d(1100) {
+				height: em(420);
+				[data-slide='slide'] li {
+					height: em(420);
+					@include inset-shadow-both(50, 40);
+				}
+			}
+			@include d(850) {
+				height: em(320);
+				[data-slide='slide'] li {
+					height: em(320);
+				}
+				[data-slide='controls'] {
+					right: em(10);
+					button {
+						width: em(30);
+						height: em(30);
+					}
+				}
+			}
+			@include d(600) {
+				height: em(220);
+				[data-slide='slide'] li {
+					height: em(220);
+				}
+			}
+		}
+	}
+	.desc-car {
+		position: absolute;
+		z-index: 100;
+		left: 0;
+		bottom: em(60);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: em(40);
+		background-color: $c-0;
+		width: 100%;
+		padding: em(6) 0;
+		box-shadow: inset em(-120) 0 $c-4;
+		p {
+			@include text-1-sm();
+			color: $c-11;
+			font-weight: 500;
+		}
+		[data-slide='desc'] {
+			color: $c-12;
+			font-weight: bold;
+		}
+		@include d(1350) {
+			box-shadow: none;
+		}
+		@include d(1100) {
+			padding: 0;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			align-items: start;
+			justify-items: center;
+			gap: em(16);
+			background-color: transparent;
+			position: static;
+			[data-slide='desc'] {
+				color: $c-0;
+				font-size: em(16, 12);
+			}
+			p {
+				color: $c-2;
+				font-size: em(12);
+				position: relative;
+				&:last-of-type {
+					grid-column: 1 / -1;
+				}
+				&::before {
+					content: '';
+					position: absolute;
+					width: 3px;
+					top: -2px;
+					left: -10px;
+					height: 100%;
+					display: inline-block;
+					background-color: $c-0;
+				}
+			}
+		}
+	}
+}
