@@ -62,6 +62,9 @@
 	@include d(1100) {
 		height: em(600);
 	}
+	@include d(900) {
+		margin-top: em(80);
+	}
 	@include d(800) {
 		background-position: 20% 0;
 	}

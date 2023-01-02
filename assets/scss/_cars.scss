@@ -166,6 +166,7 @@
 			box-shadow: none;
 		}
 		@include d(1100) {
+			margin-top: 1em;
 			padding: 0;
 			display: grid;
 			grid-template-columns: 1fr 1fr;
@@ -198,7 +199,6 @@
 			}
 		}
 		@include d(770) {
-			margin-top: 1em;
 			grid-template-columns: 1fr;
 			justify-items: start;
 			padding-left: em(32);
