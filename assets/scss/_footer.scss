@@ -75,6 +75,7 @@
 			grid-template-columns: 1fr 1fr;
 			grid-template-rows: 1fr auto;
 			justify-items: start;
+			padding-left: em(32);
 			.footer-logo {
 				grid-row: -1;
 				img {
@@ -86,7 +87,7 @@
 			}
 		}
 		@include d(700) {
-			padding: em(40) em(20);
+			padding: em(40) em(32);
 			grid-template-columns: 1fr;
 		}
 	}

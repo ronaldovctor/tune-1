@@ -11,6 +11,7 @@ class Extra {
 	buttonState() {
 		this.btn.addEventListener('click', () => {
 			this.btn.classList.toggle('active')
+			this.btn.classList.toggle('paused')
 			this.boxState()
 		})
 	}

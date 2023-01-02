@@ -96,6 +96,7 @@
 			}
 			@include d(500) {
 				height: em(40);
+				margin-inline: em(20);
 				img {
 					width: em(100) !important;
 					margin-top: em(6);

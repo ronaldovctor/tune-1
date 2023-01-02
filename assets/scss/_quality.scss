@@ -2,7 +2,7 @@
 	margin: 0 auto;
 	margin-top: em(120);
 	height: em(700);
-	background: url('../imgs/targa-gts-1.jpg') no-repeat center;
+	background: url('../imgs/quality.jpg') no-repeat center;
 	background-size: cover;
 	@include inset-shadow-l(250, 500);
 	max-width: $l-device;
@@ -41,6 +41,9 @@
 			.quality-extra {
 				display: none;
 			}
+		}
+		@include d(640) {
+			margin-left: em(20);
 		}
 	}
 	@include d(1400) {

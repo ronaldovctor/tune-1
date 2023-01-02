@@ -133,9 +133,9 @@
 				}
 			}
 			@include d(600) {
-				height: em(220);
+				height: em(280);
 				[data-slide='slide'] li {
-					height: em(220);
+					height: em(280);
 				}
 			}
 		}
@@ -196,6 +196,13 @@
 					background-color: $c-0;
 				}
 			}
+		}
+		@include d(770) {
+			margin-top: 1em;
+			grid-template-columns: 1fr;
+			justify-items: start;
+			padding-left: em(32);
+			gap: em(12);
 		}
 	}
 }

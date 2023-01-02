@@ -21,6 +21,10 @@
 			box-shadow: inset -15px 0 0 $c-4, inset 15px 0 0 $c-4;
 		}
 	}
+	@include d(800) {
+		padding: em(4) em(16);
+		font-size: em(20);
+	}
 }
 
 // Arrows
@@ -130,10 +134,11 @@ div[data-extra] {
 		width: em(48);
 		height: em(48);
 		border-radius: 50%;
-		border: 2px solid $c-0;
+		border: 2px solid $c-3;
 		background-color: $c-12;
 		cursor: pointer;
 		position: relative;
+		animation: pulse 0.6s alternate-reverse infinite;
 		&::before,
 		&::after {
 			content: '';
@@ -170,6 +175,18 @@ div[data-extra] {
 				rotate: -45deg;
 				bottom: -3px;
 				left: 75%;
+			}
+		}
+		&.paused {
+			animation: none;
+		}
+		@keyframes pulse {
+			0% {
+				box-shadow: 0 0 0px $c-3;
+			}
+
+			100% {
+				box-shadow: 0 0 15px $c-3;
 			}
 		}
 	}

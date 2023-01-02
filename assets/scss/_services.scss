@@ -38,6 +38,22 @@
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			gap: em(260);
+			@include d(1220) {
+				gap: em(60);
+			}
+			@include d(1020) {
+				grid-template-columns: 1fr;
+			}
+		}
+		@include d(830) {
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr 1fr 1fr;
+			.services-options {
+				align-self: start;
+				grid-template-columns: 1fr 1fr;
+				grid-column: 1;
+				grid-row: auto;
+			}
 		}
 	}
 	@include d(1400) {
