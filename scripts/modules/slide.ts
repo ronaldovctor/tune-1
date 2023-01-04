@@ -10,6 +10,7 @@ class Slide {
 	private thumb
 	private title
 	private desc
+	private descBtn
 	private data
 
 	constructor(
@@ -20,6 +21,7 @@ class Slide {
 		thumb: HTMLElement,
 		title: HTMLElement,
 		desc: HTMLElement[],
+		descBtn: HTMLAnchorElement,
 		data: CarProps
 	) {
 		this.container = container
@@ -30,6 +32,7 @@ class Slide {
 		this.thumb = thumb
 		this.title = title
 		this.desc = desc
+		this.descBtn = descBtn
 		this.data = data
 		this.init()
 	}
@@ -81,6 +84,7 @@ class Slide {
 		this.desc[1].innerText = stats.acceleration
 		this.desc[2].innerText = stats.speed
 		this.title.innerHTML = this.createTitle(name)
+		this.changeRedirect(name)
 	}
 
 	createTitle(name: string) {
@@ -90,6 +94,12 @@ class Slide {
 			styledNames[0]
 		}</span><span>${styledNames[1]}</span>`
 		return formatedName
+	}
+
+	changeRedirect(name: string) {
+		const formatedName = name.toLowerCase().split(' ').slice(2, 4).join('-')
+		const location = window.location
+		this.descBtn.href = `./cars/${formatedName}.html`
 	}
 
 	resizeSlide() {

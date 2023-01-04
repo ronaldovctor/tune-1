@@ -162,8 +162,16 @@
 			color: $c-12;
 			font-weight: bold;
 		}
+		[data-slide='redirect'] {
+			position: absolute;
+			bottom: em(40);
+			left: em(100);
+		}
 		@include d(1350) {
 			box-shadow: none;
+		}
+		@include d(1400) {
+			bottom: em(32);
 		}
 		@include d(1100) {
 			margin-top: 1em;
@@ -197,12 +205,28 @@
 					background-color: $c-0;
 				}
 			}
+			[data-slide='redirect'] {
+				left: em(34);
+				bottom: em(48);
+			}
 		}
 		@include d(770) {
 			grid-template-columns: 1fr;
 			justify-items: start;
 			padding-left: em(32);
 			gap: em(12);
+			[data-slide='redirect'] {
+				left: auto;
+				right: em(20);
+				bottom: em(12);
+			}
+		}
+		@include d(600) {
+			[data-slide='redirect'] {
+				left: em(20);
+				right: auto;
+				bottom: em(96);
+			}
 		}
 	}
 }

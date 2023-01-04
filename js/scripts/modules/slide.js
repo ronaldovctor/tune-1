@@ -8,8 +8,9 @@ class Slide {
     thumb;
     title;
     desc;
+    descBtn;
     data;
-    constructor(container, slides, prev, next, thumb, title, desc, data) {
+    constructor(container, slides, prev, next, thumb, title, desc, descBtn, data) {
         this.container = container;
         this.slides = slides;
         this.prevBtn = prev;
@@ -18,6 +19,7 @@ class Slide {
         this.thumb = thumb;
         this.title = title;
         this.desc = desc;
+        this.descBtn = descBtn;
         this.data = data;
         this.init();
     }
@@ -63,12 +65,18 @@ class Slide {
         this.desc[1].innerText = stats.acceleration;
         this.desc[2].innerText = stats.speed;
         this.title.innerHTML = this.createTitle(name);
+        this.changeRedirect(name);
     }
     createTitle(name) {
         const arrayNames = name.split(' ');
         const styledNames = arrayNames.slice(2, 4);
         const formatedName = `${arrayNames.slice(0, 2).join(' ')}<span>${styledNames[0]}</span><span>${styledNames[1]}</span>`;
         return formatedName;
+    }
+    changeRedirect(name) {
+        const formatedName = name.toLowerCase().split(' ').slice(2, 4).join('-');
+        const location = window.location;
+        this.descBtn.href = `./cars/${formatedName}.html`;
     }
     resizeSlide() {
         this.createThumb();

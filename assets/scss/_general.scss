@@ -6,6 +6,7 @@
 	padding: em(4) em(20);
 	border: none;
 	background-color: $c-4;
+	color: $c-5;
 	cursor: pointer;
 	box-shadow: inset -5px 0 0 $c-3;
 	width: fit-content;
@@ -24,6 +25,16 @@
 	@include d(800) {
 		padding: em(4) em(16);
 		font-size: em(20);
+	}
+	@include d(600) {
+		padding: em(4) em(12);
+		font-size: em(16);
+		&:hover {
+			box-shadow: inset -12px 0 0 $c-3, inset 12px 0 0 $c-3;
+		}
+		&.secondary:hover {
+			box-shadow: inset -10px 0 0 $c-4, inset 10px 0 0 $c-4;
+		}
 	}
 }
 

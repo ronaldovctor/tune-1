@@ -1,4 +1,5 @@
 import data from '../data/data.js'
+import Accordion from './modules/accordion.js'
 import Extra from './modules/extra.js'
 import Slide from './modules/slide.js'
 
@@ -10,8 +11,9 @@ window.addEventListener('load', () => {
 	const thumb = document.querySelector<HTMLElement>('[data-slide="scroll-thumb"]')
 	const title = document.querySelector<HTMLElement>('[data-slide="title"]')
 	const desc = document.querySelectorAll<HTMLElement>('[data-slide="desc"]')
+	const descBtn = document.querySelector<HTMLAnchorElement>('[data-slide="redirect"]')
 
-	if (container && prev && next && slides && thumb && title && desc) {
+	if (container && prev && next && slides && thumb && title && desc && descBtn) {
 		const slide = new Slide(
 			container,
 			[...slides],
@@ -20,11 +22,12 @@ window.addEventListener('load', () => {
 			thumb,
 			title,
 			[...desc],
+			descBtn,
 			data
 		)
-		window.addEventListener('scroll', stickyHeader)
 	}
 
+	window.addEventListener('scroll', stickyHeader)
 	function stickyHeader() {
 		const header = document.querySelector<HTMLElement>('header')
 		window.scrollY > 0
@@ -38,5 +41,10 @@ window.addEventListener('load', () => {
 
 	if (btn && box) {
 		const extraPopup = new Extra(btn, box)
+	}
+
+	const accordionbtns = document.querySelectorAll<HTMLElement>('[data-accordion]')
+	if (accordionbtns) {
+		const accordion = new Accordion([...accordionbtns])
 	}
 })

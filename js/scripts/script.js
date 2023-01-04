@@ -1,4 +1,5 @@
 import data from '../data/data.js';
+import Accordion from './modules/accordion.js';
 import Extra from './modules/extra.js';
 import Slide from './modules/slide.js';
 window.addEventListener('load', () => {
@@ -9,10 +10,11 @@ window.addEventListener('load', () => {
     const thumb = document.querySelector('[data-slide="scroll-thumb"]');
     const title = document.querySelector('[data-slide="title"]');
     const desc = document.querySelectorAll('[data-slide="desc"]');
-    if (container && prev && next && slides && thumb && title && desc) {
-        const slide = new Slide(container, [...slides], prev, next, thumb, title, [...desc], data);
-        window.addEventListener('scroll', stickyHeader);
+    const descBtn = document.querySelector('[data-slide="redirect"]');
+    if (container && prev && next && slides && thumb && title && desc && descBtn) {
+        const slide = new Slide(container, [...slides], prev, next, thumb, title, [...desc], descBtn, data);
     }
+    window.addEventListener('scroll', stickyHeader);
     function stickyHeader() {
         const header = document.querySelector('header');
         window.scrollY > 0
@@ -24,6 +26,10 @@ window.addEventListener('load', () => {
     const box = document.querySelector('[data-extra="infos"]');
     if (btn && box) {
         const extraPopup = new Extra(btn, box);
+    }
+    const accordionbtns = document.querySelectorAll('[data-accordion]');
+    if (accordionbtns) {
+        const accordion = new Accordion([...accordionbtns]);
     }
 });
 //# sourceMappingURL=script.js.map

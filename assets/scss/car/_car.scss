@@ -1,0 +1,47 @@
+.car {
+	max-width: $l-device;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	.car-galery {
+		display: grid;
+		grid-template-columns: minmax(400px, 650px) minmax(400px, 650px);
+		grid-template-rows: 680px 280px;
+		@include inset-shadow-r(80);
+		img {
+			position: relative;
+			z-index: -1;
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+			&:first-child {
+				grid-column: 1 / -1;
+			}
+		}
+	}
+	.car-title {
+		font-size: em(96);
+		span:last-child {
+			margin-left: em(-14, 96) !important;
+		}
+	}
+	.car-desc {
+		position: relative;
+		right: em(40);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		.car-info {
+			margin-top: em(40);
+			display: flex;
+			flex-direction: column;
+			gap: em(20);
+			@include text-1-md-2();
+			color: $c-1;
+		}
+		.button {
+			margin-top: em(60);
+			align-self: center;
+		}
+	}
+}
