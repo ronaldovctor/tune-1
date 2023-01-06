@@ -96,7 +96,7 @@
 					&::after {
 						position: absolute;
 						content: '';
-						background: url('../../../assets/imgs/acc-arrow.svg');
+						background: url('../../assets/imgs/acc-arrow.svg');
 						background-repeat: no-repeat;
 						background-size: cover;
 						background-position: center;
@@ -129,7 +129,7 @@
 				dt button {
 					color: $c-12;
 					&::after {
-						background: url('../../../assets/imgs/acc-arrow-dark.svg');
+						background: url('../../assets/imgs/acc-arrow-dark.svg');
 						background-repeat: no-repeat;
 						background-size: cover;
 						background-position: center;
