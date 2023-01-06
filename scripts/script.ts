@@ -1,6 +1,7 @@
 import data from '../data/data.js'
 import Accordion from './modules/accordion.js'
 import Extra from './modules/extra.js'
+import Galery from './modules/galery.js'
 import Slide from './modules/slide.js'
 
 window.addEventListener('load', () => {
@@ -46,5 +47,12 @@ window.addEventListener('load', () => {
 	const accordionbtns = document.querySelectorAll<HTMLElement>('[data-accordion]')
 	if (accordionbtns) {
 		const accordion = new Accordion([...accordionbtns])
+	}
+
+	const galeryImg = document.querySelector<HTMLElement>('[data-galery="galery"]')
+	const imgs = document.querySelectorAll<HTMLElement>('[data-galery="img"]')
+
+	if (galeryImg && imgs) {
+		const galery = new Galery(galeryImg, [...imgs])
 	}
 })

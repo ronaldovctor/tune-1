@@ -3,11 +3,20 @@
 	margin: 0 auto;
 	display: grid;
 	grid-template-columns: 3fr 1fr;
+	@include d(1500) {
+		padding-top: em(140);
+		grid-template-columns: 1fr 1fr;
+		// gap: em(40);
+	}
+	@include d(700) {
+		grid-template-columns: 1fr;
+	}
 	.car-galery {
 		display: grid;
-		grid-template-columns: minmax(400px, 650px) minmax(400px, 650px);
+		grid-template-columns: minmax(400px, 650px) minmax(500px, 650px);
 		grid-template-rows: 680px 280px;
-		@include inset-shadow-r(80);
+		-webkit-mask-image: linear-gradient(90deg, black 85%, transparent 100%);
+		mask-image: linear-gradient(90deg, black 85%, transparent 100%);
 		img {
 			position: relative;
 			z-index: -1;
@@ -17,12 +26,45 @@
 			&:first-child {
 				grid-column: 1 / -1;
 			}
+			&:nth-child(n + 2) {
+				cursor: pointer;
+			}
+			@include d(1500) {
+				&:first-child {
+					grid-column: 1 / 2;
+				}
+				&:nth-child(n + 2) {
+					cursor: default;
+				}
+			}
+		}
+		@include d(1500) {
+			mask-image: none;
+			-webkit-mask-image: none;
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(3, 200px);
+			overflow: hidden;
+		}
+		@include d(950) {
+			img {
+				transform: scale(1.2);
+			}
+		}
+		@include d(700) {
+			grid-template-rows: repeat(3, 300px);
 		}
 	}
 	.car-title {
 		font-size: em(96);
+		align-self: center;
 		span:last-child {
 			margin-left: em(-14, 96) !important;
+		}
+		@include d(1500) {
+			font-size: em(40);
+		}
+		@include d(700) {
+			margin-inline: auto;
 		}
 	}
 	.car-desc {
@@ -38,10 +80,41 @@
 			gap: em(20);
 			@include text-1-md-2();
 			color: $c-1;
+			@include d(1500) {
+				margin-top: em(20);
+				gap: em(12);
+				font-size: em(18);
+				line-height: em(25);
+			}
 		}
 		.button {
-			margin-top: em(60);
+			margin-top: em(40);
 			align-self: center;
+		}
+		@include d(1500) {
+			position: static;
+			max-width: 60ch;
+			margin-right: em(20);
+			margin-left: em(40);
+		}
+		@include d(900) {
+			margin-left: em(20);
+		}
+		@include d(800) {
+			.button {
+				margin-top: em(40);
+			}
+		}
+		@include d(700) {
+			order: -1 !important;
+			max-width: max-content;
+			margin: 0 em(20);
+			margin-bottom: em(40);
+		}
+		@include d(600) {
+			.car-info {
+				font-size: em(16);
+			}
 		}
 	}
 }

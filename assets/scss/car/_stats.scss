@@ -2,6 +2,9 @@
 	max-width: $l-device;
 	margin: 0 auto;
 	margin-top: em(80);
+	@include d(800) {
+		margin-top: em(40);
+	}
 	dl {
 		margin: 0 auto;
 		@include text-1-md();
@@ -10,6 +13,49 @@
 			overflow: hidden;
 			background-color: $c-11;
 			transition: 0.2s;
+			@include d(1450) {
+				padding-inline: em(16);
+			}
+			@include d(1000) {
+				&.active {
+					height: 250px !important;
+				}
+			}
+			@include d(800) {
+				&.active {
+					height: 340px !important;
+				}
+			}
+			@include d(600) {
+				dt {
+					font-size: em(18, 20) !important;
+				}
+				dd {
+					font-size: em(16, 20) !important;
+				}
+			}
+			@include d(600) {
+				dt {
+					font-size: em(16, 20) !important;
+				}
+				dd {
+					font-size: em(16, 20) !important;
+				}
+			}
+			@include d(420) {
+				&:last-child {
+					height: 70px;
+				}
+				dt button::after {
+					width: 20px !important;
+					height: 12px !important;
+				}
+			}
+			@include d(440) {
+				&.active {
+					height: 440px !important;
+				}
+			}
 			&.active {
 				height: 190px;
 				dt button::after {
@@ -108,6 +154,18 @@
 			background-color: $c-0;
 			z-index: -1;
 		}
+		@include d(800) {
+			box-shadow: inset 0 270px 0 0 $c-0;
+			&:after {
+				content: none;
+			}
+		}
+		@include d(600) {
+			box-shadow: inset 0 240px 0 0 $c-0;
+		}
+		@include d(400) {
+			box-shadow: inset 0 290px 0 0 $c-0;
+		}
 		.car-stats-extra-content {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
@@ -142,7 +200,7 @@
 						content: '';
 						position: absolute;
 						width: 3px;
-						height: 100%;
+						height: 28px;
 						background-color: $c-0;
 						left: 0;
 					}
@@ -156,6 +214,55 @@
 							font-weight: bold;
 						}
 					}
+				}
+			}
+			@include d(1450) {
+				padding-inline: em(20);
+			}
+			@include d(800) {
+				padding-top: em(40);
+				grid-template-columns: 1fr;
+				grid-template-rows: auto auto auto auto auto;
+				h4 {
+					color: $c-0;
+				}
+				p {
+					color: $c-1 !important;
+				}
+				ul {
+					order: -1;
+					grid-column: auto;
+					grid-row: auto;
+					align-self: center;
+					margin-bottom: em(80);
+					&::before {
+						content: 'Desempenho:';
+						@include text-1-md();
+						color: $c-10;
+						font-size: 16px;
+					}
+					li {
+						&::before {
+							background-color: $c-11;
+						}
+						p {
+							color: $c-11 !important;
+						}
+					}
+				}
+			}
+			@include d(600) {
+				h4 {
+					font-size: em(24);
+				}
+				p {
+					font-size: em(16);
+					span {
+						font-size: em(20) !important;
+					}
+				}
+				ul li::before {
+					height: 24px;
 				}
 			}
 		}

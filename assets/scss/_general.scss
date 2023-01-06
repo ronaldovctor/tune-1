@@ -28,7 +28,7 @@
 	}
 	@include d(600) {
 		padding: em(4) em(12);
-		font-size: em(16);
+		font-size: em(18);
 		&:hover {
 			box-shadow: inset -12px 0 0 $c-3, inset 12px 0 0 $c-3;
 		}

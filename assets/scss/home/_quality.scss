@@ -36,6 +36,9 @@
 			grid-row: 1/-1;
 			align-self: center;
 		}
+		.quality-extra-list {
+			display: none;
+		}
 		@include d(1100) {
 			grid-template-columns: 1fr;
 			.quality-extra {
@@ -51,6 +54,30 @@
 	}
 	@include d(1100) {
 		height: em(600);
+		.quality-content .quality-extra-list {
+			display: block;
+			ul {
+				display: flex;
+				flex-direction: column;
+				gap: em(10);
+				li {
+					display: flex;
+					gap: em(8);
+					align-items: center;
+					&::before {
+						content: '';
+						display: inline-block;
+						width: 3px;
+						height: 18px;
+						background-color: white;
+					}
+					p {
+						@include text-1-sm-2();
+						font-size: em(14);
+					}
+				}
+			}
+		}
 	}
 	@include d(900) {
 		margin-top: em(60);
