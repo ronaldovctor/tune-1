@@ -28,6 +28,7 @@ window.addEventListener('load', () => {
 		)
 	}
 
+	// Header
 	window.addEventListener('scroll', stickyHeader)
 	function stickyHeader() {
 		const header = document.querySelector<HTMLElement>('header')
@@ -37,6 +38,7 @@ window.addEventListener('load', () => {
 	}
 	stickyHeader()
 
+	// Extras
 	const btn = document.querySelector<HTMLElement>('[data-extra="button"]')
 	const box = document.querySelector<HTMLElement>('[data-extra="infos"]')
 
@@ -44,11 +46,14 @@ window.addEventListener('load', () => {
 		const extraPopup = new Extra(btn, box)
 	}
 
+	// Accordion
 	const accordionbtns = document.querySelectorAll<HTMLElement>('[data-accordion]')
+
 	if (accordionbtns) {
 		const accordion = new Accordion([...accordionbtns])
 	}
 
+	// Galery
 	const galeryImg = document.querySelector<HTMLElement>('[data-galery="galery"]')
 	const imgs = document.querySelectorAll<HTMLElement>('[data-galery="img"]')
 
