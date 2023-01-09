@@ -1,0 +1,50 @@
+.parts {
+	max-width: $l-device;
+	margin: 0 auto;
+	margin-top: em(120);
+	position: relative;
+	scroll-margin: em(120);
+	@include topDetail('Peç', 2);
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		width: 50%;
+		height: 100%;
+		background: $c-0;
+	}
+	.parts-content {
+		max-width: $l-device-2;
+		margin: 0 auto;
+		margin-top: em(120);
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: em(340) em(340);
+		@include bottomDetail('as');
+		img {
+			max-width: em(530);
+			height: 100%;
+			object-fit: cover;
+			justify-self: end;
+		}
+		.parts-break,
+		.parts-suspension {
+			margin-left: em(40);
+			h3 {
+				@include text-1-xl();
+			}
+			p {
+				margin-top: em(12);
+				@include text-1-sm-2();
+				color: $c-1;
+				max-width: 60ch;
+			}
+			.button {
+				display: block;
+				margin-top: em(20);
+			}
+		}
+	}
+}
