@@ -40,10 +40,10 @@ window.addEventListener('load', () => {
 
 	// Extras
 	const btn = document.querySelector<HTMLElement>('[data-extra="button"]')
-	const box = document.querySelector<HTMLElement>('[data-extra="infos"]')
+	const content = document.querySelector<HTMLElement>('[data-extra="infos"]')
 
-	if (btn && box) {
-		const extraPopup = new Extra(btn, box)
+	if (btn && content) {
+		const extraPopup = new Extra(btn, content)
 	}
 
 	// Accordion

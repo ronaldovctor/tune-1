@@ -6,7 +6,6 @@
 	@include d(1500) {
 		padding-top: em(140);
 		grid-template-columns: 1fr 1fr;
-		// gap: em(40);
 	}
 	@include d(700) {
 		grid-template-columns: 1fr;

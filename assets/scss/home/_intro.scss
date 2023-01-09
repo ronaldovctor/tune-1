@@ -1,5 +1,5 @@
 .intro {
-	height: em(830);
+	height: 100vh;
 	position: relative;
 	@include inset-shadow-l();
 	max-width: $l-device;
@@ -13,10 +13,13 @@
 	}
 	@include d(1550) {
 		height: 600px;
+		.intro-desc {
+			bottom: em(32) !important;
+		}
 	}
 	.intro-desc {
 		position: absolute;
-		bottom: em(32);
+		bottom: em(48);
 		width: fit-content;
 		height: fit-content;
 		left: 50%;

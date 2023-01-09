@@ -24,9 +24,9 @@ window.addEventListener('load', () => {
     }
     stickyHeader();
     const btn = document.querySelector('[data-extra="button"]');
-    const box = document.querySelector('[data-extra="infos"]');
-    if (btn && box) {
-        const extraPopup = new Extra(btn, box);
+    const content = document.querySelector('[data-extra="infos"]');
+    if (btn && content) {
+        const extraPopup = new Extra(btn, content);
     }
     const accordionbtns = document.querySelectorAll('[data-accordion]');
     if (accordionbtns) {
