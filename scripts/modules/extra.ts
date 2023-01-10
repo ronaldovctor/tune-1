@@ -30,7 +30,6 @@ class Extra {
 	stylingDirection() {
 		if (this.box) {
 			this.direction = this.box.getAttribute('data-extra')!.split(',')[1]
-			console.log(this.direction)
 			this.box.style.flexDirection = this.direction
 		}
 	}

@@ -21,7 +21,7 @@
 				<nav aria-label="Navegação">
 					<ul class="header-nav-items">
 						<li><a href="#cars">Carros</a></li>
-						<li><a href="#services">Serviços</a></li>
+						<li><a href="./services.html">Serviços</a></li>
 						<li><a href="#contact">Contato</a></li>
 					</ul>
 				</nav>
@@ -170,11 +170,13 @@
 						<button
 							aria-label="Controle informações extras"
 							data-extra="button"
+							class="active paused"
 						></button>
 						<ul
 							data-extra="infos"
-							aria-hidden="true"
+							aria-hidden="false"
 							aria-label="Informações extras"
+							class="active"
 						>
 							<li>
 								<p>Pedido tratado como único e revisado de ponta a ponta.</p>
@@ -188,7 +190,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="quality-extra-list">
+				<div class="quality-extra-mobile" aria-label="Informações extras">
 					<ul>
 						<li>
 							<p>Pedido tratado como único e revisado de ponta a ponta.</p>
@@ -290,8 +292,8 @@
 					bem como um remapeamento de motor.
 				</p>
 				<div class="services-options">
-					<button class="button">Modificações</button>
-					<button class="button secondary">Peças</button>
+					<a href="./services.html" class="button">Modificações</a>
+					<a href="./services.html#parts" class="button secondary">Peças</a>
 				</div>
 			</div>
 		</section>

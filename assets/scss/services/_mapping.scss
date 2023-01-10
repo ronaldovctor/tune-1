@@ -47,5 +47,34 @@
 				animation: move-arrow-down 0.8s ease-in infinite;
 			}
 		}
+		.mapping-extra-mobile {
+			display: none;
+			place-items: center;
+			align-self: start;
+			p {
+				padding: em(20);
+				background-color: rgb(0, 0, 0, 1);
+				@include text-1-sm-2();
+				max-width: 110ch;
+				margin-inline: em(20);
+				@include d(600) {
+					font-size: em(16);
+				}
+				a {
+					margin-top: em(20);
+					display: block;
+					margin-inline: auto;
+				}
+			}
+		}
+		@include d(1250) {
+			.mapping-extra {
+				display: none;
+			}
+			.mapping-extra-mobile {
+				display: grid;
+				gap: em(12);
+			}
+		}
 	}
 }
