@@ -87,7 +87,7 @@ $l-device-2: 1400px;
 @mixin inset-shadow-r($xPos: 80, $size: 100) {
 	box-shadow: inset -#{$xPos}px 0 #{$size}px $c-12;
 }
-@mixin inset-shadow-both($xPos: 80, $size: 100) {
+@mixin inset-shadow-both($xPos: 40, $size: 40) {
 	box-shadow: inset #{$xPos}px 0 #{$size}px $c-12, inset -#{$size}px 0 #{$size}px $c-12;
 }
 
