@@ -9,7 +9,7 @@ html {
 }
 
 body {
-	min-height: calc(100vh);
+	min-height: 100vh;
 	background-color: $c-12;
 	color: $c-0;
 	@include font-smooth();

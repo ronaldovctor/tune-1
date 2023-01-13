@@ -1,0 +1,125 @@
+.sale {
+	padding-top: em(120);
+	display: grid;
+	gap: em(40);
+	max-width: $l-device;
+	margin: 0 auto;
+	h1 {
+		margin-inline: auto;
+	}
+	.services-img,
+	.cars-img {
+		height: 300px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	.services-img img {
+		object-position: 25% 85%;
+	}
+	form {
+		display: grid;
+		flex-direction: column;
+		align-items: center;
+		max-width: $l-device-2;
+		background-color: $c-11;
+		margin-inline: auto;
+		padding: em(20) em(32) em(40) em(32);
+		fieldset {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: em(40);
+			margin-bottom: em(20);
+			border: none;
+			.form-option {
+				display: flex;
+				align-items: center;
+				flex-wrap: nowrap;
+				label {
+					display: grid;
+					grid-template-columns: auto auto 1fr;
+					gap: em(8);
+					align-items: center;
+					@include text-1-sm-2();
+					opacity: 0.5;
+					cursor: pointer;
+					&::after {
+						content: '';
+						display: inline-block;
+						background-color: $c-11;
+						width: em(20);
+						height: em(20);
+						border-radius: 50%;
+						border: 1px solid $c-0;
+					}
+					&:has(+ input[type='radio']:checked) {
+						opacity: 1;
+						&::after {
+							background-color: $c-0;
+							box-shadow: inset 0 0 0 7px $c-11;
+						}
+					}
+					span {
+						font-size: em(12);
+						font-weight: 200;
+						color: $c-2;
+						letter-spacing: 0.03rem;
+					}
+				}
+				input[type='radio'] {
+					appearance: none;
+					position: absolute;
+				}
+			}
+		}
+		.form-fields {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			column-gap: em(32);
+			row-gap: em(20);
+			.form-field {
+				display: grid;
+				grid-template-columns: 1fr;
+				grid-template-rows: auto auto;
+			}
+		}
+		button[type='submit'] {
+			margin-inline: auto;
+			margin-top: em(32);
+		}
+	}
+	.form-field {
+		label {
+			@include text-1-sm-2();
+			font-weight: 600;
+		}
+		input {
+			@include text-1-sm-2();
+			padding: em(6) em(8);
+			background-color: $c-11;
+			border: 1px solid $c-4;
+			color: $c-1;
+			transition: 0.2s;
+			&:hover,
+			&:focus {
+				background-color: $c-12;
+				outline: none;
+				box-shadow: 0 0 0 2px rgb($color: $c-4, $alpha: 0.5);
+			}
+			&:valid {
+				background-color: $c-12;
+			}
+			&[type='datetime-local'] {
+				color: #808080;
+				&:hover,
+				&:focus {
+					color: $c-0;
+					color-scheme: dark;
+				}
+			}
+		}
+	}
+}

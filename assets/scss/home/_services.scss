@@ -55,6 +55,9 @@
 				grid-row: auto;
 			}
 		}
+		@include d(640) {
+			margin-left: em(20);
+		}
 	}
 	@include d(1400) {
 		height: em(700);
