@@ -11,6 +11,9 @@
 	h1 {
 		margin-inline: auto;
 	}
+	section {
+		scroll-margin: em(80);
+	}
 	.services-img,
 	.cars-img {
 		height: 300px;

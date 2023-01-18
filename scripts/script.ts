@@ -64,4 +64,15 @@ window.addEventListener('load', () => {
 
 	// Form
 	const form = new Form()
+	const url = window.location.search
+	const params = new URLSearchParams(url)
+	const section = params.get('form') && document.querySelector(`#${params.get('form')}`)
+	const prod = params.get('prod')
+	if (section && prod) {
+		section.scrollIntoView({
+			behavior: 'smooth',
+			block: 'start',
+		})
+		document.querySelector(`#${prod}`)?.setAttribute('checked', 'checked')
+	}
 })
