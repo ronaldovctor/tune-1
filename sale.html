@@ -43,15 +43,33 @@
 					<fieldset>
 						<div class="form-option">
 							<label for="turbo-s">Turbo S</label>
-							<input type="radio" name="car" id="turbo-s" value="turbo-s" />
+							<input
+								type="radio"
+								name="car"
+								id="turbo-s"
+								value="turbo-s"
+								required
+							/>
 						</div>
 						<div class="form-option">
 							<label for="carrera-4s">Carrera 4S</label>
-							<input type="radio" name="car" id="carrera-4s" value="carrera-4s" />
+							<input
+								type="radio"
+								name="car"
+								id="carrera-4s"
+								value="carrera-4s"
+								required
+							/>
 						</div>
 						<div class="form-option">
 							<label for="targa-gts">Targa GTS</label>
-							<input type="radio" name="car" id="targa-gts" value="targa-gts" />
+							<input
+								type="radio"
+								name="car"
+								id="targa-gts"
+								value="targa-gts"
+								required
+							/>
 						</div>
 					</fieldset>
 					<div class="form-fields">
@@ -123,11 +141,17 @@
 				<div class="services-img">
 					<img src="./assets/imgs/parts.jpg" alt="" />
 				</div>
-				<form action="#" class="services-form">
+				<form action="#" class="services-form" id="services-form">
 					<fieldset>
 						<div class="form-option">
 							<label for="mapping">Mapeamento</label>
-							<input type="radio" name="service" id="mapping" value="cayman-s" />
+							<input
+								type="radio"
+								name="service"
+								id="mapping"
+								value="cayman-s"
+								required
+							/>
 						</div>
 						<div class="form-option">
 							<label for="suspension">
@@ -139,6 +163,7 @@
 								name="service"
 								id="suspension"
 								value="isc-n1-coilover"
+								required
 							/>
 						</div>
 						<div class="form-option">
@@ -151,6 +176,7 @@
 								name="service"
 								id="brake"
 								value="essex-road-brake-kit"
+								required
 							/>
 						</div>
 					</fieldset>
@@ -215,9 +241,17 @@
 								required
 							/>
 						</div>
-						<div class="form-field">
+						<div class="form-field" id="date">
 							<label for="date">Visita à TuNe-1</label>
-							<input type="datetime-local" name="date" id="date" required />
+							<input type="datetime-local" name="date" />
+						</div>
+						<div class="form-field" id="quantity">
+							<label for="quantity">Quantidade</label>
+							<select name="quantity">
+								<option selected disabled>Selecione...</option>
+								<option value="1">1 par</option>
+								<option value="2">2 pares</option>
+							</select>
 						</div>
 					</div>
 					<button type="submit" class="button secondary">Comprar</button>

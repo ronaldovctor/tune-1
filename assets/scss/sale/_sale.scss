@@ -4,6 +4,10 @@
 	gap: em(40);
 	max-width: $l-device;
 	margin: 0 auto;
+	@include d(650) {
+		padding-top: em(160);
+		gap: em(32);
+	}
 	h1 {
 		margin-inline: auto;
 	}
@@ -14,6 +18,9 @@
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+		}
+		@include d(640) {
+			height: 200px;
 		}
 	}
 	.services-img img {
@@ -75,6 +82,13 @@
 				}
 			}
 		}
+		@include d(640) {
+			fieldset {
+				display: flex;
+				flex-wrap: wrap;
+				gap: em(24);
+			}
+		}
 		.form-fields {
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -85,10 +99,17 @@
 				grid-template-columns: 1fr;
 				grid-template-rows: auto auto;
 			}
+			@include d(650) {
+				grid-template-columns: 1fr;
+			}
 		}
 		button[type='submit'] {
 			margin-inline: auto;
 			margin-top: em(32);
+		}
+		h4 {
+			margin-inline: auto;
+			@include text-1-md-2();
 		}
 	}
 	.form-field {
@@ -96,7 +117,8 @@
 			@include text-1-sm-2();
 			font-weight: 600;
 		}
-		input {
+		input,
+		select {
 			@include text-1-sm-2();
 			padding: em(6) em(8);
 			background-color: $c-11;
@@ -120,6 +142,13 @@
 					color-scheme: dark;
 				}
 			}
+		}
+		select {
+			padding: em(8) em(4);
+		}
+		&:has(input[type='datetime-local']),
+		&:has(select[name='quantity']) {
+			display: none;
 		}
 	}
 }

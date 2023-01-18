@@ -1,6 +1,7 @@
 import data from '../data/data.js';
 import Accordion from './modules/accordion.js';
 import Extra from './modules/extra.js';
+import Form from './modules/form.js';
 import Galery from './modules/galery.js';
 import Slide from './modules/slide.js';
 window.addEventListener('load', () => {
@@ -37,5 +38,6 @@ window.addEventListener('load', () => {
     if (galeryImg && imgs) {
         const galery = new Galery(galeryImg, [...imgs]);
     }
+    const form = new Form();
 });
 //# sourceMappingURL=script.js.map
